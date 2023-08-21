@@ -16,9 +16,51 @@
     />
   </head>
   <body class="bg-slate-50">
+    <nav class="bg-secondary p-4">
+      <div class="flex justify-between lg:justify-around">
+        <a href="/src/index.html">
+          <img src="/public/LOGO DBPC2023.png" class="w-48" alt="logo" />
+        </a>
+        <div class="hidden lg:my-auto lg:flex">
+          <ul class="lg:flex lg:space-x-10 text-white">
+            <li class="py-2.5">
+              <a href="#">About</a>
+            </li>
+            <li class="py-2.5">
+              <a href="#">Mechanism</a>
+            </li>
+            <li class="py-2.5">
+              <a href="#">Latest Update</a>
+            </li>
+            <a href="/src/registrasi.html" class="py-2.5 px-7 bg-white rounded-full text-secondary font-semibold"
+              >Register</a
+            >
+          </ul>
+        </div>
+        <div class="relative my-auto md:hidden">
+          <button class="text-white">
+            <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <div class="absolute right-0 mt-2 w-40 bg-secondary border border-white rounded-lg shadow-lg hidden">
+            <ul class="py-2 text-white">
+              <li class="px-4 py-2 hover:bg-gray-100 hover:bg-cyan-200 hover:text-secondary">About</li>
+              <li class="px-4 py-2 hover:bg-gray-100 hover:bg-cyan-200 hover:text-secondary">Mechanism</li>
+              <li class="px-4 py-2 hover:bg-gray-100 hover:bg-cyan-200 hover:text-secondary">Latest Update</li>
+              <li class="px-4 py-2">
+                <a href="/src/registrasi.html" class="py-2.5 px-7 bg-white rounded-full text-secondary font-semibold"
+                  >Register</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
     <section class="px-6 pt-32 bg-[url('/public/background-header.png')] bg-auto bg-no-repeat">
       <h1 class="font-extrabold text-4xl text-white text-center lg:text-5xl">REGISTRASI</h1>
-      <form action="" class="mt-12 py-2.5 px-5 bg-white rounded-lg lg:w-1/2 lg:mx-auto">
+      <form class="mt-12 py-2.5 px-5 bg-white rounded-lg lg:w-1/2 lg:mx-auto">
         <input
           type="text"
           class="mt-5 py-4 px-3.5 w-full rounded-lg bg-neutral-100 placeholder:text-xs placeholder:text-black"
@@ -169,6 +211,14 @@
         const fileName = fileInput.files[0]?.name || '';
         fileNameDisplay.value = fileName;
       }
+    </script>
+    <script>
+      const menuButton = document.querySelector('button');
+      const dropdown = document.querySelector('.absolute');
+
+      menuButton.addEventListener('click', () => {
+        dropdown.classList.toggle('hidden');
+      });
     </script>
   </body>
 </html>
